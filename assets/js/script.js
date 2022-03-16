@@ -9,6 +9,17 @@ $("#ButtonID").click(function () {
   //   var drink = $("#ID").val();
   var drink = "Non_Alcoholic";
 
+  //Checks to see if the drink div section is empty
+  if (!$("#drink").is(":empty")) {
+    //If not true, it'll empty the div before fetching another drink
+    $("#drink").empty();
+  }
+  //Calls to fetch drink and display it
+  fetchDrink(drink);
+});
+
+//Fetches a drink API
+function fetchDrink(drink) {
   //creates API variable
   var dAPI =
     "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=" + drink;
@@ -20,7 +31,6 @@ $("#ButtonID").click(function () {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
       //Gets length of the drink available and saves the number
       var amountDrink = data.drinks.length - 1;
       var luckyNum;
@@ -39,9 +49,43 @@ $("#ButtonID").click(function () {
         })
         .then(function (data) {
           console.log(data);
+          //Displays drink picture
+          $("#drink").append(
+            "<img src=" +
+              data.drinks[0].strDrinkThumb +
+              " alt=DrinkPic class=drinkImg /> <h2>" +
+              data.drinks[0].strDrink +
+              "</h2> <h3>Ingredients Needed</h3> <dl id=ingredientsList> </dl> <h3>Instructions</h3> <p>" +
+              data.drinks[0].strInstructions +
+              "</p>"
+          );
+
+          //Loops through the ingredients and measurements and appends them in the list
+          for (var i = 1; i < 16; i++) {
+            console.log("Looping");
+            //Will append both ingredient and Measure if filled
+            if (
+              data.drinks[0][`strIngredient${i}`] &&
+              data.drinks[0][`strMeasure${i}`]
+            ) {
+              $("#ingredientsList").append(
+                "<dt>" +
+                  data.drinks[0][`strIngredient${i}`] +
+                  "</dt> <dd> -" +
+                  data.drinks[0][`strMeasure${i}`] +
+                  "</dd>"
+              );
+            } else if (data.drinks[0][`strIngredient${i}`]) {
+              $("#ingredientsList").append(
+                "<dt>" + data.drinks[0][`strIngredient${i}`] + "</dt>"
+              );
+            } else {
+              return;
+            }
+          }
         });
     });
-});
+}
 
 /*mAPI="www.themealdb.com/api/json/v1/1/filter.php?a=" + foodChoice; 
 fetch(mAPI)
