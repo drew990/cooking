@@ -3,26 +3,38 @@ console.log("Reading Script");
 //Listens for a click on the search button and when click, it'll run the function
 $("#ButtonID").click(function () {
   //Local Variables
-  var drinkID;
+  var dAPI;
 
   //Gets value from the wanting drink
   //   var drink = $("#ID").val();
   var drink = "Non_Alcoholic";
+  // var drink = "vodka";
 
   //Checks to see if the drink div section is empty
   if (!$("#drink").is(":empty")) {
     //If not true, it'll empty the div before fetching another drink
     $("#drink").empty();
   }
+
+  //Checks if the drink is non-alcoholic
+  if (drink === "Non_Alcoholic") {
+    //If non-alcoholic it'll get the correct API and display it
+    console.log("The drink is non-alcoholic");
+    dAPI = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=" + drink;
+    //calls fetch drink to fetch it
+    fetchDrink(dAPI);
+  } else if (drink === "Vodka") {
+    console.log("Drink is Vodka");
+    dAPI = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + drink;
+    //calls fetch drink to fetch it
+    fetchDrink(dAPI);
+  }
   //Calls to fetch drink and display it
-  fetchDrink(drink);
 });
 
 //Fetches a drink API
-function fetchDrink(drink) {
+function fetchDrink(dAPI) {
   //creates API variable
-  var dAPI =
-    "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=" + drink;
   var drAPI = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=";
 
   //Fetches a random drinks from cocktaildb
@@ -105,31 +117,31 @@ fetch(mrAPI)
     console.log(data);
   });*/
 
-function getRecipe() {
-  // value of food selection
-  var foodChoice = $("input[name=selector]:checked").val();
+// function getRecipe() {
+//   // value of food selection
+//   var foodChoice = $("input[name=selector]:checked").val();
 
-  mAPI = "www.themealdb.com/api/json/v1/1/filter.php?a=" + foodChoice;
-  fetch(mAPI)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-    });
+//   mAPI = "www.themealdb.com/api/json/v1/1/filter.php?a=" + foodChoice;
+//   fetch(mAPI)
+//     .then(function (response) {
+//       return response.json();
+//     })
+//     .then(function (data) {
+//       console.log(data);
+//     });
 
-  console.log(foodChoice);
-  var rand = Math.floor(Math.random() * response.meals.length);
-  console.log(response.meals.length);
-  var mealID = response.meals[rand].idMeal;
-  console.log(mealId);
+//   console.log(foodChoice);
+//   var rand = Math.floor(Math.random() * response.meals.length);
+//   console.log(response.meals.length);
+//   var mealID = response.meals[rand].idMeal;
+//   console.log(mealId);
 
-  mrAPI = "www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + mealID;
-  fetch(mrAPI)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-    });
-}
+//   mrAPI = "www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + mealID;
+//   fetch(mrAPI)
+//     .then(function (response) {
+//       return response.json();
+//     })
+//     .then(function (data) {
+//       console.log(data);
+//     });
+// }
