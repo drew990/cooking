@@ -87,91 +87,27 @@ function fetchDrink(drink) {
     });
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // meals api
-  $("#MButtonID").click(function () {
-    //Local Variables
-    var mealID;
-  
-    //Gets value from the wanting meal
-    //   var meal = $("#ID").val();
-    var meal = "Indian";
-  
-    //Checks to see if the meal div section is empty
-    if (!$("#meal").is(":empty")) {
-      //If not true, it'll empty the div before fetching another meal
-      $("#meal").empty();
-    }
-    //Calls to fetch meal and display it
-    getRecipe(meal);
-  });
+$("#MButtonID").click(function () {
+  //Local Variables
+  var mealID;
 
+  //Gets value from the wanting meal
+  //   var meal = $("#ID").val();
+  var meal = "Indian";
 
-
+  //Checks to see if the meal div section is empty
+  if (!$("#meal").is(":empty")) {
+    //If not true, it'll empty the div before fetching another meal
+    $("#meal").empty();
+  }
+  //Calls to fetch meal and display it
+  getRecipe(meal);
+});
 
 function getRecipe(meal) {
-
   var mAPI = "https://www.themealdb.com/api/json/v1/1/filter.php?a=" + meal;
-  
+
   console.log(mAPI);
   fetch(mAPI)
     .then(function (response) {
@@ -179,14 +115,15 @@ function getRecipe(meal) {
     })
     .then(function (data) {
       console.log(data);
-    
+
       console.log(meal);
-      var rand = Math.floor(Math.random() * (data.meals.length-1));
+      var rand = Math.floor(Math.random() * (data.meals.length - 1));
       console.log(rand);
       var mealID = data.meals[rand].idMeal;
       console.log(mealID);
 
-      var mrAPI = "https://www.themealdb.com/api/json/v1/1/lookup.php?i="+mealID;
+      var mrAPI =
+        "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + mealID;
       console.log(mrAPI);
       fetch(mrAPI)
         .then(function (response) {
@@ -194,39 +131,38 @@ function getRecipe(meal) {
         })
         .then(function (data) {
           console.log(data);
-        
-        $("#meal").append(
-          "<img src=" +
-            data.meals[0].strMealThumb +
-            " alt=mealPic class=mealImg /> <h2>" +
-            data.meals[0].strMeal +
-            "</h2> <h3>Ingredients Needed</h3> <dl id=mingredientsList> </dl> <h3>Instructions</h3> <p>" +
-            data.meals[0].strInstructions +
-            "</p>"
-        );
-        for (var i = 1; i < 16; i++) {
-          console.log("Looping");
-          
-          if (
-            data.meals[0][`strIngredient${i}`] &&
-            data.meals[0][`strMeasure${i}`]
-          ) {
-            $("#mingredientsList").append(
-              "<dt>" +
-                data.meals[0][`strIngredient${i}`] +
-                "</dt> <dd> -" +
-                data.meals[0][`strMeasure${i}`] +
-                "</dd>"
-            );
-          } else if (data.meals[0][`strIngredient${i}`]) {
-            $("#mingredientsList").append(
-              "<dt>" + data.meals[0][`strIngredient${i}`] + "</dt>"
-            );
-          } else {
-            return;
-          }
-        }
-      });
-  });
-}
 
+          $("#meal").append(
+            "<img src=" +
+              data.meals[0].strMealThumb +
+              " alt=mealPic class=mealImg /> <h2>" +
+              data.meals[0].strMeal +
+              "</h2> <h3>Ingredients Needed</h3> <dl id=mingredientsList> </dl> <h3>Instructions</h3> <p>" +
+              data.meals[0].strInstructions +
+              "</p>"
+          );
+          for (var i = 1; i < 16; i++) {
+            console.log("Looping");
+
+            if (
+              data.meals[0][`strIngredient${i}`] &&
+              data.meals[0][`strMeasure${i}`]
+            ) {
+              $("#mingredientsList").append(
+                "<dt>" +
+                  data.meals[0][`strIngredient${i}`] +
+                  "</dt> <dd> -" +
+                  data.meals[0][`strMeasure${i}`] +
+                  "</dd>"
+              );
+            } else if (data.meals[0][`strIngredient${i}`]) {
+              $("#mingredientsList").append(
+                "<dt>" + data.meals[0][`strIngredient${i}`] + "</dt>"
+              );
+            } else {
+              return;
+            }
+          }
+        });
+    });
+}
