@@ -15,7 +15,6 @@ $("#ButtonID").click(function () {
     //If not true, it'll empty the div before fetching another drink
     $("#drink").empty();
   }
-
   //Checks if the drink is non-alcoholic
   if (drink === "Non_Alcoholic") {
     //If non-alcoholic it'll get the correct API and display it
@@ -29,6 +28,8 @@ $("#ButtonID").click(function () {
     //calls fetch drink to fetch it
     fetchDrink(dAPI);
   }
+  //Black Border for Drink option *Austin
+  $("#drink").addClass("openedMenu");
   //Calls to fetch drink and display it
 });
 
@@ -115,6 +116,8 @@ $("#MButtonID").click(function () {
   }
   //Calls to fetch meal and display it
   getRecipe(meal);
+  //Black Border for Meal *Austin
+  $("#meal").addClass("openedMenu");
 });
 
 function getRecipe(meal) {

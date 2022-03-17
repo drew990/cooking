@@ -1,20 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h1>Test Message</h1>
-    <button id="ButtonID">Test Button</button>
-    <div id="drink" style="width: 300px"></div>
-    <button id="MButtonID">Test Meal</button>
-      <div id="meal" style="width:300px">
-      </div>
-  </body>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="./assets/js/script.js"></script>
+    <head>
+        <meta charset="UTF-8">
+        <Meta http-equiv="x-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+            <title> Food and Drink API</title>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <link rel="stylesheet" href="assets/css/style.css">
+       
+    </head>
+    <Body>
+        <div id="left_menu"></div>
+        <div id="food_outcome">
+            <header>
+                <!--Title-->
+                <h1>Meal Suggestion</h1>
+                </header>
+                <h2> What are you hungry for?</h2>
+            <div id="flexwrapper">
+                <div id="food_left" class="edibles">
+                
+                    <button id="MButtonID">Test Meal</button>
+                    <div id="meal" class= "windows" style="width:300px"></div>
+                </div>
+                <div id="drink_right" class="edibles">
+                <button id="ButtonID">Test Drink</button>
+                    <div id="drink" class= "windows" style="width: 300px"></div>
+                    </div>
+        </div>
+        </div>
+        <script src="assets/js/script.js"></script>
+    </Body>
 </html>
