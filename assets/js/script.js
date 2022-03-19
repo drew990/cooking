@@ -4,11 +4,33 @@ console.log("Reading Script");
 $("#ButtonID").click(function () {
   //Local Variables
   var dAPI;
+  //Will create a new selection every time the button is press
+  var drinkSelection = [];
 
   //Gets value from the wanting drink
-  //   var drink = $("#ID").val();
-  var drink = "Non_Alcoholic";
-  // var drink = "vodka";
+  checkBoxSt = $("#Vodka").is(":checked");
+  if (checkBoxSt === true) {
+    drinkSelection.push($("#Vodka").val());
+  }
+  checkBoxSt = $("#Gin").is(":checked");
+  if (checkBoxSt === true) {
+    drinkSelection.push($("#Gin").val());
+  }
+  checkBoxSt = $("#Rum").is(":checked");
+  if (checkBoxSt === true) {
+    drinkSelection.push($("#Rum").val());
+  }
+  checkBoxSt = $("#Tequila").is(":checked");
+  if (checkBoxSt === true) {
+    drinkSelection.push($("#Tequila").val());
+  }
+  checkBoxSt = $("#Non_Alcoholic").is(":checked");
+  if (checkBoxSt === true) {
+    drinkSelection.push($("#Non_Alcoholic").val());
+  }
+
+  //Gets a random drink type from the section
+  drink = drinkSelection[Math.floor(Math.random() * drinkSelection.length)];
 
   //Checks to see if the drink div section is empty
   if (!$("#drink").is(":empty")) {
@@ -18,12 +40,12 @@ $("#ButtonID").click(function () {
   //Checks if the drink is non-alcoholic
   if (drink === "Non_Alcoholic") {
     //If non-alcoholic it'll get the correct API and display it
-    console.log("The drink is non-alcoholic");
     dAPI = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=" + drink;
     //calls fetch drink to fetch it
     fetchDrink(dAPI);
-  } else if (drink === "Vodka") {
-    console.log("Drink is Vodka");
+  } else if (drinkSelection.length === 0) {
+    drinkError();
+  } else {
     dAPI = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + drink;
     //calls fetch drink to fetch it
     fetchDrink(dAPI);
@@ -32,6 +54,11 @@ $("#ButtonID").click(function () {
   $("#drink").addClass("openedMenu");
   //Calls to fetch drink and display it
 });
+
+function drinkError() {
+  $("#drink").append("<h1>No selections have been made</h1>");
+  console.log("DRINK ERROR");
+}
 
 //Fetches a drink API
 function fetchDrink(dAPI) {
@@ -47,7 +74,7 @@ function fetchDrink(dAPI) {
       //Gets length of the drink available and saves the number
       var amountDrink = data.drinks.length - 1;
       var luckyNum;
-      console.log(amountDrink);
+
       //Gets a random number
       luckyNum = Math.floor(Math.random() * amountDrink + 0);
       //Gets Id from that random drink pick
@@ -75,7 +102,6 @@ function fetchDrink(dAPI) {
 
           //Loops through the ingredients and measurements and appends them in the list
           for (var i = 1; i < 16; i++) {
-            console.log("Looping");
             //Will append both ingredient and Measure if filled
             if (
               data.drinks[0][`strIngredient${i}`] &&
@@ -100,22 +126,70 @@ function fetchDrink(dAPI) {
     });
 }
 
+function foodError() {
+  $("#meal").append("<h1>No selections have been made</h1>");
+  console.log("DRINK ERROR");
+}
+
 // meals api
 $("#MButtonID").click(function () {
   //Local Variables
-  var mealID;
+  var meal,
+    foodSelection = [];
+
+  //Gets value from the wanting drink
+  checkBoxSt = $("#American").is(":checked");
+  if (checkBoxSt === true) {
+    foodSelection.push($("#American").val());
+  }
+  checkBoxSt = $("#Chinese").is(":checked");
+  if (checkBoxSt === true) {
+    foodSelection.push($("#Chinese").val());
+  }
+  checkBoxSt = $("#French").is(":checked");
+  if (checkBoxSt === true) {
+    foodSelection.push($("#French").val());
+  }
+  checkBoxSt = $("#Indian").is(":checked");
+  if (checkBoxSt === true) {
+    foodSelection.push($("#Indian").val());
+  }
+  checkBoxSt = $("#Italian").is(":checked");
+  if (checkBoxSt === true) {
+    foodSelection.push($("#Italian").val());
+  }
+  checkBoxSt = $("#Italian").is(":checked");
+  if (checkBoxSt === true) {
+    foodSelection.push($("#Italian").val());
+  }
+  checkBoxSt = $("#Italian").is(":checked");
+  if (checkBoxSt === true) {
+    foodSelection.push($("#Italian").val());
+  }
+  checkBoxSt = $("#Mexican").is(":checked");
+  if (checkBoxSt === true) {
+    foodSelection.push($("#Mexican").val());
+  }
+  checkBoxSt = $("#Japanese").is(":checked");
+  if (checkBoxSt === true) {
+    foodSelection.push($("#Japanese").val());
+  }
 
   //Gets value from the wanting meal
-  //   var meal = $("#ID").val();
-  var meal = "Indian";
+  meal = foodSelection[Math.floor(Math.random() * foodSelection.length)];
 
   //Checks to see if the meal div section is empty
   if (!$("#meal").is(":empty")) {
     //If not true, it'll empty the div before fetching another meal
     $("#meal").empty();
   }
-  //Calls to fetch meal and display it
-  getRecipe(meal);
+
+  if (foodSelection.length === 0) {
+    foodError();
+  } else {
+    //Calls to fetch meal and display it
+    getRecipe(meal);
+  }
   //Black Border for Meal *Austin
   $("#meal").addClass("openedMenu");
 });

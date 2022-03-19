@@ -1,34 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <Meta http-equiv="x-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-            <title> Food and Drink API</title>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-            <link rel="stylesheet" href="assets/css/style.css">
-       
-    </head>
-    <Body>
-        <div id="left_menu"></div>
-        <div id="food_outcome">
-            <header>
-                <!--Title-->
-                <h1>Meal Suggestion</h1>
-                </header>
-                <h2> What are you hungry for?</h2>
-            <div id="flexwrapper">
-                <div id="food_left" class="edibles">
-                
-                    <button id="MButtonID">Test Meal</button>
-                    <div id="meal" class= "windows" style="width:300px"></div>
-                </div>
-                <div id="drink_right" class="edibles">
-                <button id="ButtonID">Test Drink</button>
-                    <div id="drink" class= "windows" style="width: 300px"></div>
-                    </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="x-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food and Drink API</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!-- Food and Drink Selection -->
+    <div id="left_menu">
+      <form>
+        <label for="Vodka">Vodka</label>
+        <input type="checkbox" id="Vodka" value="Vodka" name="Vodka" />
+        <label for="Gin">Gin</label>
+        <input type="checkbox" id="Gin" value="Gin" name="Gin" />
+        <label for="Rum">Rum</label>
+        <input type="checkbox" id="Rum" value="Rum" name="Rum" />
+        <label for="Tequila">Tequila</label>
+        <input type="checkbox" id="Tequila" value="Tequila" name="Tequila" />
+        <label for="Non_Alcoholic">Non Alcohol Drink</label>
+        <input
+          type="checkbox"
+          id="Non_Alcoholic"
+          value="Non_Alcoholic"
+          name="Non_Alcoholic"
+        />
+      </form>
+      <form>
+        <label for="American">American</label>
+        <input type="checkbox" id="American" value="American" name="American" />
+        <label for="Chinese">Chinese</label>
+        <input type="checkbox" id="Chinese" value="Chinese" name="Chinese" />
+        <label for="French">French</label>
+        <input type="checkbox" id="French" value="French" name="French" />
+        <label for="Indian">Indian</label>
+        <input type="checkbox" id="Indian" value="Indian" name="Indian" />
+        <label for="Italian">Italian</label>
+        <input type="checkbox" id="Italian" value="Italian" name="Italian" />
+        <label for="Mexican">Mexican</label>
+        <input type="checkbox" id="Mexican" value="Mexican" name="Mexican" />
+        <label for="Japanese">Japanese</label>
+        <input type="checkbox" id="Japanese" value="Japanese" name="Japanese" />
+      </form>
+    </div>
+    <div id="food_outcome">
+      <header>
+        <!--Title-->
+        <h1>Meal Suggestion</h1>
+      </header>
+      <h2>What are you hungry for?</h2>
+      <div id="flexwrapper">
+        <div id="food_left" class="edibles">
+          <button id="MButtonID">Test Meal</button>
+          <div id="meal" class="windows" style="width: 300px"></div>
         </div>
+        <div id="drink_right" class="edibles">
+          <button id="ButtonID">Test Drink</button>
+          <div id="drink" class="windows" style="width: 300px"></div>
         </div>
-        <script src="assets/js/script.js"></script>
-    </Body>
+      </div>
+    </div>
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>
