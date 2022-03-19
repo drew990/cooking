@@ -1,3 +1,4 @@
+/*Images for results*/
 .drinkImg {
   width: auto;
   height: 200px;
@@ -23,6 +24,7 @@ div {
   display: block;
   margin: 5px;
 }
+/*Fancy buttons*/
 button {
   transition-duration: 0.4s;
   background-color: #4caf50; /* Green */
@@ -44,6 +46,7 @@ button:hover {
   display: none;
   flex: 1;
 }
+/*Search Results text color and bg color*/
 .openedMenu {
   border: 1px black solid; /*black*/
   margin: 5px;
@@ -60,7 +63,7 @@ body {
   background-color: purple;
 }
 #flexwrapper {
-  /*Google gave me this solution*/
+  /*Flexwrapper to make search result bg match*/
   display: flex;
   flex-direction: row;
 }
