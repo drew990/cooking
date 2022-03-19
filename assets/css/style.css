@@ -20,6 +20,7 @@ div {
   overflow: auto;
   height: 100px;
 }
+/*Initial buttons added*/
 .edibles button {
   display: block;
   margin: 5px;
@@ -60,7 +61,7 @@ body {
   background-color: lightblue; /*lightblue*/
 }
 .left_menu {
-  background-color: purple;
+  background-color: purple; /*Purple*/
 }
 #flexwrapper {
   /*Flexwrapper to make search result bg match*/
