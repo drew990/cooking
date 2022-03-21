@@ -4,64 +4,162 @@
     <meta charset="UTF-8" />
     <meta http-equiv="x-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Food and Drink API</title>
+    <link rel="icon" href="./assets/images/favicon.ico" />
+    <title>Food and Drink Generator</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="assets/css/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/purecss@2.1.0/build/pure-min.css"
+      integrity="sha384-yHIFVG6ClnONEA5yB5DJXfW2/KC173DIQrYoZMEtBvGzmf0PKiGyNEqe9N6BNDBH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/purecss@2.1.0/build/grids-responsive-min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <!-- Food and Drink Selection -->
-    <div id="left_menu">
-      <form>
-        <label for="Vodka">Vodka</label>
-        <input type="checkbox" id="Vodka" value="Vodka" name="Vodka" />
-        <label for="Gin">Gin</label>
-        <input type="checkbox" id="Gin" value="Gin" name="Gin" />
-        <label for="Rum">Rum</label>
-        <input type="checkbox" id="Rum" value="Rum" name="Rum" />
-        <label for="Tequila">Tequila</label>
-        <input type="checkbox" id="Tequila" value="Tequila" name="Tequila" />
-        <label for="Non_Alcoholic">Non Alcohol Drink</label>
-        <input
-          type="checkbox"
-          id="Non_Alcoholic"
-          value="Non_Alcoholic"
-          name="Non_Alcoholic"
-        />
-      </form>
-      <form>
-        <label for="American">American</label>
-        <input type="checkbox" id="American" value="American" name="American" />
-        <label for="Chinese">Chinese</label>
-        <input type="checkbox" id="Chinese" value="Chinese" name="Chinese" />
-        <label for="French">French</label>
-        <input type="checkbox" id="French" value="French" name="French" />
-        <label for="Indian">Indian</label>
-        <input type="checkbox" id="Indian" value="Indian" name="Indian" />
-        <label for="Italian">Italian</label>
-        <input type="checkbox" id="Italian" value="Italian" name="Italian" />
-        <label for="Mexican">Mexican</label>
-        <input type="checkbox" id="Mexican" value="Mexican" name="Mexican" />
-        <label for="Japanese">Japanese</label>
-        <input type="checkbox" id="Japanese" value="Japanese" name="Japanese" />
-      </form>
-    </div>
-    <div id="food_outcome">
-      <header>
-        <!--Title-->
-        <h1>Meal Suggestion</h1>
-      </header>
-      <h2>What are you hungry for?</h2>
-      <div id="flexwrapper">
-        <div id="food_left" class="edibles">
-          <button id="MButtonID">Test Meal</button>
-          <div id="meal" class="windows" style="width: 300px"></div>
-        </div>
-        <div id="drink_right" class="edibles">
-          <button id="ButtonID">Test Drink</button>
-          <div id="drink" class="windows" style="width: 300px"></div>
+    <header>
+      <!--Title-->
+      <h1>Food and Drink Generator</h1>
+      <p>
+        Do you ever find yourself in a rut, wondering what to make for a meal?
+        We've got your back, with an easy-to-use generator that will give you a
+        meal plan in just seconds. Select what you're feeling, and then hit the
+        button to get the results. Click as many times as you want, and never
+        have to worry about what's for breakfast, lunch, dinner, or dessert
+        again!
+      </p>
+    </header>
+    <main class="pure-g">
+      <!-- Food and Drink Selection -->
+      <div class="pure-u-1 pure-u-lg-4-24" id="left_menu">
+        <h2 class="border">🍹 Pick Your Drink Type</h2>
+        <form>
+          <div>
+            <input type="checkbox" id="Vodka" value="Vodka" name="Vodka" />
+            <label for="Vodka">Vodka</label>
+          </div>
+          <div>
+            <input type="checkbox" id="Gin" value="Gin" name="Gin" />
+            <label for="Gin">Gin</label>
+          </div>
+          <div>
+            <input type="checkbox" id="Rum" value="Rum" name="Rum" />
+            <label for="Rum">Rum</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="Tequila"
+              value="Tequila"
+              name="Tequila"
+            />
+            <label for="Tequila">Tequila</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="Non_Alcoholic"
+              value="Non_Alcoholic"
+              name="Non_Alcoholic"
+            />
+            <label for="Non_Alcoholic">Non Alcohol Drink</label>
+          </div>
+        </form>
+        <h2 class="border">🍔 Pick Your Food Type</h2>
+        <form>
+          <div>
+            <input
+              type="checkbox"
+              id="American"
+              value="American"
+              name="American"
+            />
+            <label for="American">American</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="Chinese"
+              value="Chinese"
+              name="Chinese"
+            />
+            <label for="Chinese">Chinese</label>
+          </div>
+          <div>
+            <input type="checkbox" id="French" value="French" name="French" />
+            <label for="French">French</label>
+          </div>
+          <div>
+            <input type="checkbox" id="Indian" value="Indian" name="Indian" />
+            <label for="Indian">Indian</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="Italian"
+              value="Italian"
+              name="Italian"
+            />
+            <label for="Italian">Italian</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="Mexican"
+              value="Mexican"
+              name="Mexican"
+            />
+            <label for="Mexican">Mexican</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="Japanese"
+              value="Japanese"
+              name="Japanese"
+            />
+            <label for="Japanese">Japanese</label>
+          </div>
+        </form>
+      </div>
+      <div class="pure-u-1 pure-u-lg-3-4" id="food_outcome">
+        <h2>What Are You Waiting For? Your Meal Is Only a Click Away 😋</h2>
+        <div id="flexwrapper" class="pure-g meal-display">
+          <section
+            id="food_left"
+            class="edibles pure-u-md-1-2 pure-u-sm-1-2 pure-u-1-1"
+          >
+            <button class="pure-button pure-button-primary" id="MButtonID">
+              Get a Meal
+            </button>
+            <div id="meal" class="windows"></div>
+          </section>
+          <section
+            id="drink_right"
+            class="edibles pure-u-md-1-2 pure-u-sm-1-2 pure-u-1-1"
+          >
+            <button class="pure-button-primary pure-button" id="ButtonID">
+              Get a Drink
+            </button>
+            <div id="drink" class="windows"></div>
+          </section>
         </div>
       </div>
-    </div>
+    </main>
+    <footer>
+      <h4>Made with ❤️</h4>
+      <p>&copy; 2022 Core Code, Inc.</p>
+    </footer>
     <script src="assets/js/script.js"></script>
   </body>
 </html>

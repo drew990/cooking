@@ -51,7 +51,7 @@ $("#ButtonID").click(function () {
     fetchDrink(dAPI);
   }
   //Black Border for Drink option *Austin
-  $("#drink").addClass("openedMenu");
+  $("#drink").addClass("card");
   //Calls to fetch drink and display it
 });
 
@@ -95,10 +95,11 @@ function fetchDrink(dAPI) {
               data.drinks[0].strDrinkThumb +
               " alt=DrinkPic class=drinkImg /> <h2>" +
               data.drinks[0].strDrink +
-              "</h2> <h3>Ingredients Needed</h3> <dl id=ingredientsList> </dl> <h3>Instructions</h3> <p>" +
+              "</h2> <h3>Ingredients Needed</h3><div class=ingredients> <ol id=ingredientsList> </ol><br/></div> <h3>Instructions</h3> <p>" +
               data.drinks[0].strInstructions +
               "</p>"
           );
+          $(".ingredients").addClass("wrapper");
 
           //Loops through the ingredients and measurements and appends them in the list
           for (var i = 1; i < 16; i++) {
@@ -108,15 +109,15 @@ function fetchDrink(dAPI) {
               data.drinks[0][`strMeasure${i}`]
             ) {
               $("#ingredientsList").append(
-                "<dt>" +
+                "<li>" +
                   data.drinks[0][`strIngredient${i}`] +
-                  "</dt> <dd> -" +
+                  " - " +
                   data.drinks[0][`strMeasure${i}`] +
-                  "</dd>"
+                  "</li>"
               );
             } else if (data.drinks[0][`strIngredient${i}`]) {
               $("#ingredientsList").append(
-                "<dt>" + data.drinks[0][`strIngredient${i}`] + "</dt>"
+                "<li>" + data.drinks[0][`strIngredient${i}`] + "</li>"
               );
             } else {
               return;
@@ -191,7 +192,7 @@ $("#MButtonID").click(function () {
     getRecipe(meal);
   }
   //Black Border for Meal *Austin
-  $("#meal").addClass("openedMenu");
+  $("#meal").addClass("card");
 });
 
 function getRecipe(meal) {
@@ -226,27 +227,27 @@ function getRecipe(meal) {
               data.meals[0].strMealThumb +
               " alt=mealPic class=mealImg /> <h2>" +
               data.meals[0].strMeal +
-              "</h2> <h3>Ingredients Needed</h3> <dl id=mingredientsList> </dl> <h3>Instructions</h3> <p>" +
+              "</h2> <h3>Ingredients Needed</h3> <div class=ingredients> <ol id=mingredientsList> </ol><br/></div> <h3>Instructions</h3> <p>" +
               data.meals[0].strInstructions +
               "</p>"
           );
-          for (var i = 1; i < 16; i++) {
-            console.log("Looping");
+          $(".ingredients").addClass("wrapper");
 
+          for (var i = 1; i < 16; i++) {
             if (
               data.meals[0][`strIngredient${i}`] &&
               data.meals[0][`strMeasure${i}`]
             ) {
               $("#mingredientsList").append(
-                "<dt>" +
+                "<li>" +
                   data.meals[0][`strIngredient${i}`] +
-                  "</dt> <dd> -" +
+                  " - " +
                   data.meals[0][`strMeasure${i}`] +
-                  "</dd>"
+                  "</li>"
               );
             } else if (data.meals[0][`strIngredient${i}`]) {
               $("#mingredientsList").append(
-                "<dt>" + data.meals[0][`strIngredient${i}`] + "</dt>"
+                "<li>" + data.meals[0][`strIngredient${i}`] + "</li>"
               );
             } else {
               return;
