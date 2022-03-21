@@ -1,4 +1,71 @@
-/*Images for results*/
+/* Universal CSS */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: 500;
+}
+
+:root {
+  --primary-color: #112d4e;
+  --secondary-color: #3f72af;
+  --third-color: #f9f7f7;
+}
+
+body {
+  background-color: var(--third-color);
+  color: #000;
+}
+
+header {
+  background-color: var(--primary-color);
+  color: rgb(255, 255, 255);
+  padding: 1rem 3rem;
+  min-height: 5rem;
+}
+
+h1 {
+  font-weight: 900;
+}
+
+h2 {
+  font-weight: 800;
+}
+
+p {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+form div label {
+  font-weight: 500;
+}
+
+section button {
+  margin: 1rem 0;
+}
+div h2 {
+  text-align: center;
+}
+
+main {
+  min-height: 80vh;
+}
+
+/* End of Universal CSS */
+
+#drink p {
+  overflow: auto;
+  max-height: 500px;
+  padding: 1rem 2rem 2rem 2rem;
+}
+
+/* Meal Display CSS */
+
+.meal-display {
+  padding: 1rem 0;
+  text-align: center;
+}
 .drinkImg {
   width: auto;
   height: 200px;
@@ -8,67 +75,112 @@
   width: auto;
   height: 200px;
 }
-#left_menu {
-  width: 15vw;
-  height: 100vh;
-}
-div {
-  box-sizing: border-box;
-  float: left;
-}
-#meal p {
-  overflow: auto;
-  height: 100px;
-}
-/*Initial buttons added*/
-.edibles button {
-  display: block;
-  margin: 5px;
-}
-/*Fancy buttons*/
-button {
-  transition-duration: 0.4s;
-  background-color: #4caf50; /* Green */
-  border: 2px solid #000000; /* Black */
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  width: 300px;
-  box-sizing: border-box;
-}
-button:hover {
-  background-color: #fafafa; /* White*/
-  color: rgb(2, 2, 2);
-}
-.windows {
-  display: none;
-  flex: 1;
-}
-/*Search Results text color and bg color*/
-.openedMenu {
-  border: 1px black solid; /*black*/
-  margin: 5px;
-  padding: 5px;
-  background-color: gold; /*gold*/
-  display: block;
-  height: max-content;
+
+#food_outcome {
+  background-color: var(--third-color);
+  padding: 1rem 2rem;
 }
 
-body {
-  background-color: lightblue; /*lightblue*/
+.ingredients {
+  text-align: center;
+  width: 90%;
 }
-.left_menu {
-  background-color: purple; /*Purple*/
+
+.ingredients ol {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  list-style-type: none;
 }
-#flexwrapper {
-  /*Flexwrapper to make search result bg match*/
-  display: flex;
-  flex-direction: row;
+
+.ingredients ol li {
+  float: left;
+  width: 11em;
+  margin: auto;
 }
+
+br {
+  clear: left;
+}
+
+div.wrapper {
+  margin-bottom: 2rem;
+}
+
+#meal p {
+  overflow: auto;
+  max-height: 500px;
+  padding: 1rem 2rem 2rem 2rem;
+}
+
+.card {
+  border: 0px black solid; /*black*/
+  margin: 1rem;
+  padding: 5px;
+  /* background-color: gold; gold */
+  display: block;
+  height: max-content;
+  box-shadow: -5px 5px 5px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.card:hover {
+  box-shadow: -5px 7px 5px 7px rgba(0, 0, 0, 0.65);
+}
+/* End of Meal Display CSS */
+/* Selection Display CSS */
+
+#left_menu {
+  background-color: var(--secondary-color);
+  color: #fff;
+  padding: 1rem 2rem;
+  min-height: 80vh;
+}
+
+.border {
+  border-bottom: #fff solid 2px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+}
+/* End of Selection Display CSS */
+
 .edibles {
   flex-direction: column;
   display: flex;
+}
+
+/* Footer Display */
+footer {
+  background-color: #000;
+  color: #fff;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* End of Footer Display */
+
+@media screen and (max-width: 1200px) {
+  #left_menu {
+    min-height: 20vh;
+  }
+  .ingredients ol li {
+    float: none;
+    width: 11em;
+    margin: auto;
+  }
+
+  main {
+    overflow-x: hidden;
+    width: 100vw;
+  }
+  .border {
+    border-bottom: #fff solid 2px;
+    width: 80%;
+    padding: 0.5rem 1rem;
+    margin: 1rem auto;
+  }
 }
