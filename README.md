@@ -2,7 +2,7 @@
 
 ## Image of Application
 
-![](assets/images/application-screenshot.PNG)
+![](assets/images/screenshot.png)
 
 (Image Screenshot)
 
