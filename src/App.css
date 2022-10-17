@@ -1,0 +1,237 @@
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: auto;
+  max-width: 1600px;
+}
+
+.brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.brand img {
+  height: 60px;
+  width: auto;
+  margin-right: 1rem;
+}
+
+.nav-background {
+  width: 100%;
+  background-color: var(--primary-color);
+  height: fit-content;
+  box-shadow: 0px -5px 5px 5px rgba(0, 0, 0, 0.75);
+}
+
+.nav-padding {
+  padding: 2rem 5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  max-width: 500px;
+}
+
+.about-background {
+  background-color: var(--secondary-color);
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.hero-background {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.68), rgba(0, 0, 0, 0.65)),
+    url(./images/Hero.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-text {
+  width: 65%;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+.hero-text h1 {
+  margin-bottom: 1rem;
+}
+
+.about-text {
+  width: 80%;
+  margin: auto;
+}
+
+.steps-background {
+  background-color: var(--fourth-color);
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.steps-background h2 {
+  padding-bottom: 3rem;
+}
+
+.steps-icons-div {
+  min-width: 250px;
+}
+
+.steps-icons-div img {
+  height: 75px;
+  width: auto;
+}
+
+.Food-Gen {
+  margin: auto;
+  max-width: 1600px;
+  color: var(--black-text);
+  padding: 3rem 2rem;
+}
+
+.food-container {
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+.food-container img {
+  max-height: 400px;
+  width: auto;
+  border-radius: 5px;
+  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.6);
+  /* margin: 0 auto 2rem auto; */
+  text-align: center;
+}
+
+.food-container .food-meal-display {
+  max-width: 400px;
+  text-align: left;
+}
+
+.food-container h3 {
+  padding-bottom: 1rem;
+}
+
+.food-container h4 {
+  padding-bottom: 1rem;
+}
+
+.food-container button {
+  margin: 3rem 0rem;
+  width: 50%;
+  padding: 1rem;
+  font-size: 18px;
+}
+
+.food-container-text {
+  max-width: 90%;
+  margin: 0 auto 2rem auto;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  /* border: 2px solid var(--primary-color); */
+  border-radius: 5px;
+  padding: 0.5rem 2rem 1rem 2rem;
+  /* color: #fdfdfd; */
+  letter-spacing: 1px;
+  /* word-spacing: 1px; */
+  white-space: pre-line;
+  line-height: 1.75;
+  /* background-color: var(--primary-color); */
+}
+
+.ingredient {
+  text-align: left;
+  list-style-type: decimal;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.75;
+}
+
+.ingredient::before {
+  background-color: var(--fourth-color);
+}
+
+/* .food-container-text::after {
+  content: "\a";
+  white-space: pre;
+} */
+
+@media screen and (max-width: 800px) {
+  .nav-padding {
+    padding: 2rem 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 500px;
+  }
+  .food-container img {
+    height: auto;
+    width: 300px;
+    border-radius: 5px;
+    box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.6);
+    /* margin: 0 auto 2rem auto; */
+    text-align: center;
+  }
+  .food-meal-display {
+    margin-top: 2rem;
+  }
+  .steps-icons-div {
+    min-width: 250px;
+    margin-top: 1rem;
+  }
+  .steps-background h2 {
+    padding-bottom: 1rem;
+  }
+
+  .hero-text {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+  }
+  .hero-text h1 {
+    margin-bottom: 2rem;
+  }
+  .measurements-div {
+    width: 100%;
+  }
+  .ingredient-div {
+    width: 100%;
+  }
+  .food-container button {
+    width: 100%;
+  }
+  .food-container .food-meal-display {
+    text-align: center;
+  }
+}
