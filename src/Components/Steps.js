@@ -1,5 +1,5 @@
 import React from "react";
-import choice from "../images/icons/choice.png";
+// import choice from "../images/icons/choice.png";
 import cursor from "../images/icons/cursor.png";
 import saltbae from "../images/icons/saltbae.png";
 
