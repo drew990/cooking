@@ -66,102 +66,102 @@ const RandomMeal = () => {
         <div className="measurements-div">
           <h5>Measurements</h5>
           <ul className="ingredient">
-            {posts.strMeasure1 && posts.strMeasure1 != " " ? (
+            {posts.strMeasure1 && posts.strMeasure1 !== " " ? (
               <li>{posts.strMeasure1}</li>
             ) : (
               <></>
             )}
-            {posts.strMeasure2 && posts.strMeasure2 != " " ? (
+            {posts.strMeasure2 && posts.strMeasure2 !== " " ? (
               <li>{posts.strMeasure2}</li>
             ) : (
               <></>
             )}
-            {posts.strMeasure3 && posts.strMeasure3 != " " ? (
+            {posts.strMeasure3 && posts.strMeasure3 !== " " ? (
               <li>{posts.strMeasure3}</li>
             ) : (
               <></>
             )}
-            {posts.strMeasure4 && posts.strMeasure4 != " " ? (
+            {posts.strMeasure4 && posts.strMeasure4 !== " " ? (
               <li>{posts.strMeasure4}</li>
             ) : (
               <></>
             )}
-            {posts.strMeasure5 && posts.strMeasure5 != " " ? (
+            {posts.strMeasure5 && posts.strMeasure5 !== " " ? (
               <li>{posts.strMeasure5}</li>
             ) : (
               <></>
             )}
-            {posts.strMeasure6 && posts.strMeasure6 != " " ? (
+            {posts.strMeasure6 && posts.strMeasure6 !== " " ? (
               <li>{posts.strMeasure6}</li>
             ) : (
               <></>
             )}
-            {posts.strMeasure7 && posts.strMeasure7 != " " ? (
+            {posts.strMeasure7 && posts.strMeasure7 !== " " ? (
               <li>{posts.strMeasure7}</li>
             ) : (
               <></>
             )}
-            {posts.strMeasure8 && posts.strMeasure8 != " " ? (
+            {posts.strMeasure8 && posts.strMeasure8 !== " " ? (
               <li>{posts.strMeasure8}</li>
             ) : (
               <></>
             )}
-            {posts.strMeasure9 && posts.strMeasure9 != " " ? (
+            {posts.strMeasure9 && posts.strMeasure9 !== " " ? (
               <li>{posts.strMeasure9}</li>
             ) : (
               <></>
             )}
-            {posts.strMeasure10 && posts.strMeasure10 != " " ? (
+            {posts.strMeasure10 && posts.strMeasure10 !== " " ? (
               <li>{posts.strMeasure10}</li>
             ) : (
               <></>
             )}
-            {posts.strMeasure11 && posts.strMeasure11 != " " ? (
+            {posts.strMeasure11 && posts.strMeasure11 !== " " ? (
               <li>{posts.strMeasure11}</li>
             ) : (
               <></>
             )}
-            {posts.strMeasure12 && posts.strMeasure12 != " " ? (
+            {posts.strMeasure12 && posts.strMeasure12 !== " " ? (
               <li>{posts.strMeasure12}</li>
             ) : (
               <></>
             )}
-            {posts.strMeasure13 && posts.strMeasure13 != " " ? (
+            {posts.strMeasure13 && posts.strMeasure13 !== " " ? (
               <li>{posts.strMeasure13}</li>
             ) : (
               <></>
             )}
-            {posts.strMeasure14 && posts.strMeasure14 != " " ? (
+            {posts.strMeasure14 && posts.strMeasure14 !== " " ? (
               <li>{posts.strMeasure14}</li>
             ) : (
               <></>
             )}
-            {posts.strMeasure15 && posts.strMeasure15 != " " ? (
+            {posts.strMeasure15 && posts.strMeasure15 !== " " ? (
               <li>{posts.strMeasure15}</li>
             ) : (
               <></>
             )}
-            {posts.strMeasure16 && posts.strMeasure16 != " " ? (
+            {posts.strMeasure16 && posts.strMeasure16 !== " " ? (
               <li>{posts.strMeasure16}</li>
             ) : (
               <></>
             )}
-            {posts.strMeasure17 && posts.strMeasure17 != " " ? (
+            {posts.strMeasure17 && posts.strMeasure17 !== " " ? (
               <li>{posts.strMeasure17}</li>
             ) : (
               <></>
             )}
-            {posts.strMeasure18 && posts.strMeasure18 != " " ? (
+            {posts.strMeasure18 && posts.strMeasure18 !== " " ? (
               <li>{posts.strMeasure18}</li>
             ) : (
               <></>
             )}
-            {posts.strMeasure19 && posts.strMeasure19 != " " ? (
+            {posts.strMeasure19 && posts.strMeasure19 !== " " ? (
               <li>{posts.strMeasure19}</li>
             ) : (
               <></>
             )}
-            {posts.strMeasure20 && posts.strMeasure20.length != 1 ? (
+            {posts.strMeasure20 && posts.strMeasure20.length !== 1 ? (
               <li>{posts.strMeasure20}</li>
             ) : (
               <></>
@@ -190,58 +190,32 @@ const RandomMeal = () => {
 };
 
 export default function FoodGen() {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  // const [data, setData] = useState(null);
+  // const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const response = await axios.get(
-          `https://www.themealdb.com/api/json/v1/1/list.php?c=list`
-        );
+  // useEffect(() => {
+  //   const getData = async () => {
+  //     try {
+  //       const response = await axios.get(
+  //         `https://www.themealdb.com/api/json/v1/1/list.php?c=list`
+  //       );
 
-        setData(response.data.meals);
-        setError(null);
-      } catch (err) {
-        setError(err.message);
-        setData(null);
-      } finally {
-        setLoading(false);
-      }
-    };
-    getData();
-  }, []);
+  //       setData(response.data.meals);
+  //       setError(null);
+  //     } catch (err) {
+  //       setError(err.message);
+  //       setData(null);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+  //   getData();
+  // }, []);
 
   return (
     <div className="Food-Gen">
       <RandomMeal />
     </div>
   );
-}
-
-{
-  /* 
-  //NOTES
-  //==========
-  //This code is to get meals by category
-<h2>Meals By Category</h2>
-      <select>
-        <option> Select</option>
-        {data &&
-          data.map(({ strCategory }) => (
-            <option key={strCategory} value={strCategory}>
-              {strCategory}
-            </option>
-          ))}
-      </select>
-      {/* Loading Section */
-  //{loading && <div>A moment please...</div>}
-  //{/* Gives Error if it can't load */}
-  //{error && (
-  //<div>{`There is a problem fetching the post data - ${error}`}</div>
-  //)}
-  //<div>
-  //<button>Give Me Recipe</button>
-  //</div> */}
 }

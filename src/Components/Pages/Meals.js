@@ -1,11 +1,8 @@
 import React from "react";
+import UnderConstruction from "../Construction";
 
 function Meals() {
-  return (
-    <div>
-      <h1>Meals Page</h1>
-    </div>
-  );
+  return <UnderConstruction />;
 }
 
 export default Meals;

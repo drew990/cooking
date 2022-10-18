@@ -45,6 +45,16 @@
   max-width: 500px;
 }
 
+.nav-warning-popup {
+  background-color: #ed2939;
+  padding: 1rem;
+}
+
+.nav-warning-text {
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
 .about-background {
   background-color: var(--secondary-color);
   text-align: center;
@@ -174,6 +184,18 @@
   content: "\a";
   white-space: pre;
 } */
+
+.construction {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 350px;
+  text-align: center;
+  margin: auto;
+  color: var(--black-text);
+  height: 75vh;
+}
 
 @media screen and (max-width: 800px) {
   .nav-padding {
