@@ -1,42 +1,36 @@
-# Meal Creator
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Image of Application
+## Getting Started
 
-![ScreenShot of Website](./src/images/ScreenShot.png)
+First, run the development server:
 
-## Description
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-This is a meal creator that will give a random recipe when loading up the page or pressing the recipe button. The drinks include various alcohol bases as well as a non-alcoholic option. The recipes, consisting of the title, an image, ingredients and measurements, and a detailed description of how to make the meal/drink, show up in the respective card.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-<!-- based on criteria by the input of the user. There are two lists of checkboxes that serve as selectable options for types of drinks and areas of origin for meals. The meals options are various cuisines.If nothing is selected and a button is pressed, the user will be prompted to select an option first. -->
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## Utility
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-- Displays ingredients, measurements
-- Displays image of meal/drink
-- Detailed recipe with instructions
+## Learn More
 
-- Can be repeated until desired results
+To learn more about Next.js, take a look at the following resources:
 
-<!--
-- Takes user input from checkbox selection
-- Shows random recipe based off user input
-- Requires selection before usage -->
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## Resources Used
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-- HTML
-- CSS
-- React.JS
-- Netlify
-- JavaScript
-- TheMealDB API
-- TheCocktailDB API
-  <!-- - JQuery -->
-  <!-- - Pure Framework -->
+## Deploy on Vercel
 
-<!-- We used HTML and CSS assisted by the Pure Framework in order to create our website. The recipe selector was made possible through functions in JavaScript calling theMealDB and theCocktailDB API's. -->
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-### URL to Deployed Application: https://feedupcooking.netlify.app/
-
-Made by Nitish Doss, Andrew Banagas, and Austin Schumacher
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
